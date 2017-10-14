@@ -1,6 +1,10 @@
 hoursheader = "  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 " # 3*24+1 = 73
-linebreaker = "\x1b[37m+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+"
+#linebreaker = "\x1b[37m+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+"
+linebreaker = "\x1b[49m+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+"
+
 indent = "       " # 7 spaces
+marklogdin = ' '
+
 
 frommonth = {"Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,"Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12}
 tomonth = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -56,7 +60,7 @@ if minmonth == maxmonth:
 
 
    for interv in times:
-      color = "\x1B[%im" % random.randint(31,36)
+      color = "\x1B[%im" % random.randint(41,46)
       day = interv[1]
       hour_start= interv[2]
       if interv[3]<30:
@@ -79,14 +83,14 @@ if minmonth == maxmonth:
           #print "%i %i %i"%(d,m,h)
           #print "%s %s %s"%(day,maxday,hour_start)
           if min_start == 0:
-            cal[d][1][h][0]=color+'X'
-            cal[d][1][h][1]=color+'X'
+            cal[d][1][h][0]=color+marklogdin
+            cal[d][1][h][1]=color+marklogdin
             duration-=1
           else:
-            cal[d][1][h][1]=color+'X'
+            cal[d][1][h][1]=color+marklogdin
 
           for i in range(duration-1):
-            cal[d][1][h][m]=color+'X'
+            cal[d][1][h][m]=color+marklogdin
             if m == 0:
               m=1
             else:
@@ -109,9 +113,9 @@ if minmonth == maxmonth:
    print indent + linebreaker
 
    for day in cal:
-      line = "%3s %2i \x1b[37m|" % (tomonth[minmonth],day[0])
+      line = "%3s %2i \x1b[49m|" % (tomonth[minmonth],day[0])
       for h in day[1]:
-          line+="%1s%1s\x1b[37m|" % (h[0],h[1])
+          line+="%1s%1s\x1b[49m|" % (h[0],h[1])
       print line
       print indent + linebreaker
 
