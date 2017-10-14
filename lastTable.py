@@ -1,8 +1,6 @@
 hoursheader = "  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 " # 3*24+1 = 73
-#linebreaker = "\x1b[37m+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+"
 linebreaker = "\x1b[49m+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+"
-
-indent = "       " # 7 spaces
+indent = "      " # 7 spaces (May 28 )
 marklogdin = ' '
 
 
@@ -49,7 +47,7 @@ for l in lines:
 # first we set all to '.' -> offline
 cal = []
 if minmonth == maxmonth:
-   for daynum in range(minday,maxday+1):
+   for daynum in range(maxday,minday-1,-1):
        day = []
        for h in range(24):
           day.append([' ',' '])
@@ -101,7 +99,7 @@ if minmonth == maxmonth:
               m=0
 
 
-print "+ %i intervals read from log" % len(times)
+print "+ %i login session read from log" % len(times)
 print "  from: %s %s" %(tomonth[minmonth],minday)
 print "  to: %s %s" %(tomonth[maxmonth],maxday)
 #-------------------------------------------
@@ -113,7 +111,7 @@ if minmonth == maxmonth:
    print indent + linebreaker
 
    for day in cal:
-      line = "%3s %2i \x1b[49m|" % (tomonth[minmonth],day[0])
+      line = "%3s %2i\x1b[49m|" % (tomonth[minmonth],day[0])
       for h in day[1]:
           line+="%1s%1s\x1b[49m|" % (h[0],h[1])
       print line
