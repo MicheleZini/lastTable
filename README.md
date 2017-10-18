@@ -17,7 +17,7 @@ get output from *last* command --> ```$ last | python lastToLog.py```
 - from raw entries..
 ```
 reboot   system boot  4.10.0-35-generi Wed Oct  4 05:24 - 13:36  (08:12)
-oshur    tty7         :0               Tue Oct  3 17:58 - 05:24  (11:25)
+user     tty7         :0               Tue Oct  3 17:58 - 05:24  (11:25)
 ```
 - ..extract time intervals and save them to logfile.
 (*original idea is to collect them at system startup.
