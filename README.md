@@ -50,6 +50,13 @@ we now have wtmp entries:
 ['1', '53', '~', '~~', 'runlevel', '4.10.0-35-generic', '0', '0', '0', '1506949239', '348493', '0', '0', '0', '0']
 ['2', '0', '~', '~~', 'reboot', '4.10.0-35-generic', '0', '0', '0', '1506949222', '76766', '0', '0', '0', '0']
 ```
+dat we interpret as:
+```
+2017/10/02 13:00:39 (359116) [login] - LOGIN - 
+2017/10/02 13:00:39 (359116) [ init] - 1740 - tty1
+2017/10/02 13:00:39 (348493) [runlv] - runlevel - 4.10.0-35-generic
+2017/10/02 13:00:22 ( 76766) [ boot] - reboot - 4.10.0-35-generic
+```
 Determining the data intervals:
 -------------------------------
 How do we correlate this data in a smart way?
