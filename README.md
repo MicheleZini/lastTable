@@ -36,6 +36,7 @@ where: day = ( daynumber, [ hour1, hour2 .. hour24 ] ]
 ```
 fill the 1half. 2half chars accoding to intervals read from log
 tadaaa
+![demo](https://pbs.twimg.com/media/DMIY69oW0AAhbKq.jpg)
 
 # InDev: betterlastTable
 
