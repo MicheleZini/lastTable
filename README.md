@@ -38,3 +38,18 @@ fill the 1half. 2half chars accoding to intervals read from log
 tadaaa
 
 # InDev: betterlastTable
+
+instead of this piping bash logging nonsense, can we read entries directly from source on disk?
+well yes of course, last reads from `/var/log/wtmp` and we can do the same.
+utmp file structure is not straightforward, values unpacking is necessary (*thx Kexian Li*)
+
+we now have wtmp entries:
+```
+['6', '1740', 'tty1', 'tty1', 'LOGIN', '', '0', '0', '1740', '1506949239', '359116', '0', '0', '0', '0']
+['5', '1740', 'tty1', 'tty1', '', '', '0', '0', '1740', '1506949239', '359116', '0', '0', '0', '0']
+['1', '53', '~', '~~', 'runlevel', '4.10.0-35-generic', '0', '0', '0', '1506949239', '348493', '0', '0', '0', '0']
+['2', '0', '~', '~~', 'reboot', '4.10.0-35-generic', '0', '0', '0', '1506949222', '76766', '0', '0', '0', '0']
+```
+Determining the data intervals:
+-------------------------------
+How do we correlate this data in a smart way?
