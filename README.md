@@ -27,3 +27,14 @@ Wed Oct 4 05:24 -> 13:36 (08:12)
 Tue Oct 3 17:58 -> 05:24 (11:25)
 
 ```
+Build a horrifying data structure to represent the calendar
+in the form of:
+```
+cal = [ day1, day2 .. dayn ]
+where: day = ( daynumber, [ hour1, hour2 .. hour24 ] ]
+  and: hour = [ 1half, 2half ]
+```
+fill the 1half. 2half chars accoding to intervals read from log
+tadaaa
+
+# InDev: betterlastTable
